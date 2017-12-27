@@ -32,18 +32,9 @@
 ## If you now want to deploy a new client version, just redo the second step.
 
 
-FROM debian
+FROM node:8
 
-RUN apt-get update &&\
-    apt-get install -y gnupg curl git-core &&\
-    curl -sL https://deb.nodesource.com/setup | bash - &&\
-    apt-get update &&\
-    apt-get install -y nodejs
-
-RUN apt-get update &&\
-    apt-get install -y build-essential
-
-RUN adduser ethnetintel
+RUN adduser --disabled-password --gecos "" ethnetintel
 
 RUN cd /home/ethnetintel &&\
     git clone https://github.com/cubedro/eth-net-intelligence-api &&\
