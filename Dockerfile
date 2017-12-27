@@ -5,6 +5,6 @@ RUN git config --global user.email "hello@settlemint.io"
 RUN git config --global user.name "SettleMint"
 COPY . .
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm install --production
+RUN npm install
 
 CMD [ "pm2-docker", "start", "pm2.json" ]
