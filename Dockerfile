@@ -35,7 +35,7 @@
 FROM debian
 
 RUN apt-get update &&\
-    apt-get install -y curl git-core &&\
+    apt-get install -y gnupg curl git-core &&\
     curl -sL https://deb.nodesource.com/setup | bash - &&\
     apt-get update &&\
     apt-get install -y nodejs
